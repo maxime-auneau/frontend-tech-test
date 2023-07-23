@@ -25,6 +25,7 @@
     "nextjs-progressbar": "^0.0.14",
     "react": "17",
     "react-dom": "17",
+    "react-icons": "^4.10.1",
     "react-query": "^3.39.1",
     "tailwind-merge": "^1.2.1"
   },
@@ -64,6 +65,9 @@
   },
   "lint-staged": {
     "package.json": "sort-package-json",
-    "**/*.{js,ts,tsx}": ["prettier --write", "eslint --cache --fix"]
+    "**/*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   }
 }
