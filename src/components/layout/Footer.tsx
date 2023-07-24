@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Footer({ footerData }: { footerData: any }): JSX.Element {
-  console.log(footerData);
   return (
     <>
       <div className="bg-gray-800">

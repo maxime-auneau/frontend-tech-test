@@ -21,7 +21,7 @@ export function CarouselComponent({ carouselData }: { carouselData: any }) {
     }
   };
 
-  const isDisabled = (direction: 'prev' | 'next') => { // Added type here
+  const isDisabled = (direction: 'prev' | 'next') => {
     if (direction === 'prev') {
       return currentIndex <= 0;
     }
