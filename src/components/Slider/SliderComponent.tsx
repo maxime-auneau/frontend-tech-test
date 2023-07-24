@@ -24,12 +24,12 @@ export function SliderComponent({ sliderData }: { sliderData: any }): JSX.Elemen
   useEffect(() => {
     const timer = setTimeout(() => {
       nextSlide();
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full py-16 relative group">
+    <div className="h-[780px] w-full mb-10 relative group">
       <div
         style={{
           backgroundImage: `url(${

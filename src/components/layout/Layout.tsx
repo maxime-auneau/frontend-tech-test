@@ -6,8 +6,10 @@ import { getComponentData, getWebConfigData } from '../../services/GetData';
 import Footer from './Footer';
 import Header from './Header';
 
+import { CarouselComponent } from '$components/Carousel/CarouselComponent';
 import { SliderComponent } from '$components/Slider/SliderComponent';
 import { DEFAULT_LANGUAGE, KENTICO_HARDCODED_PAGES } from '$utils/constants';
+import React from "react";
 
 function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   const { data: pageData } = useQuery(
@@ -24,6 +26,7 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   const headerData: any = getWebConfigData(webConfig, 'header');
   const footerData: any = getWebConfigData(webConfig, 'footer');
   const sliderData: any = getComponentData(pageData, 'section_static_slider');
+  const carouselData: any = getComponentData(pageData, 'section_static_carousel');
   return (
     <>
       <div className="flex min-h-screen w-full flex-col gap-10 overflow-hidden">
@@ -32,6 +35,7 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
           className={clsx('mx-auto flex w-full flex-grow flex-col content-spacer overflow-hidden')}
         >
           <SliderComponent sliderData={sliderData} />
+          <CarouselComponent carouselData={carouselData} />
         </main>
         <Footer />
       </div>
