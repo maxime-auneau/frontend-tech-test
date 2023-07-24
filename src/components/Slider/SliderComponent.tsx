@@ -38,7 +38,7 @@ export function SliderComponent({ sliderData }: { sliderData: any }): JSX.Elemen
         }}
         className="w-full h-full bg-center bg-cover duration-500 relative"
       >
-        <div className="absolute -translate-x-0 top-[70%] w-[45%] left-20">
+        <div className="absolute -translate-x-0 top-[60%] w-[45%] left-20">
           <div className="text-white font-light mb-2 text-sm">
             <p className="text-ellipsis overflow-hidden whitespace-nowrap">
               {sliderData.items[currentIndex].description}

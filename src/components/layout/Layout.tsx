@@ -1,3 +1,4 @@
+import React from 'react';
 import { useQuery } from 'react-query';
 import clsx from 'clsx';
 
@@ -6,10 +7,10 @@ import { getComponentData, getWebConfigData } from '../../services/GetData';
 import Footer from './Footer';
 import Header from './Header';
 
+import { AdComponent } from '$components/Ad/AdComponent';
 import { CarouselComponent } from '$components/Carousel/CarouselComponent';
 import { SliderComponent } from '$components/Slider/SliderComponent';
 import { DEFAULT_LANGUAGE, KENTICO_HARDCODED_PAGES } from '$utils/constants';
-import React from "react";
 
 function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   const { data: pageData } = useQuery(
@@ -27,17 +28,19 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   const footerData: any = getWebConfigData(webConfig, 'footer');
   const sliderData: any = getComponentData(pageData, 'section_static_slider');
   const carouselData: any = getComponentData(pageData, 'section_static_carousel');
+  const adData: any = getComponentData(pageData, 'section_static_ad');
   return (
     <>
-      <div className="flex min-h-screen w-full flex-col gap-10 overflow-hidden">
+      <div className="flex min-h-screen w-full flex-col overflow-hidden">
         <Header header={headerData} />
         <main
           className={clsx('mx-auto flex w-full flex-grow flex-col content-spacer overflow-hidden')}
         >
           <SliderComponent sliderData={sliderData} />
           <CarouselComponent carouselData={carouselData} />
+          <AdComponent adData={adData} />
         </main>
-        <Footer />
+        <Footer footerData={footerData} />
       </div>
     </>
   );
